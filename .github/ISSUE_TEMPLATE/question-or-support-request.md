@@ -1,10 +1,9 @@
 ---
 name: Question or Support Request
 about: Questions and requests for support.
-title: ''
+title: ""
 labels: question
-assignees: ''
-
+assignees: ""
 ---
 
 ## ❓ Question or Support Request

@@ -1,10 +1,9 @@
 ---
 name: Enhancement
 about: Suggest an enhancement for an existing feature.
-title: ''
+title: ""
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 ## 🔍 Is your enhancement related to a problem? Please describe.
