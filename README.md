@@ -9,6 +9,7 @@ You may find the following primary resources:
 -   **[notebooks](notebooks)** - Jupyter notebooks with exercises and solutions in Python
     -   [**pre-algebra**](notebooks/pre-algebra) - Pre-algebra concepts
 -   **[ladderz](ladderz)** - A crate with implementations of concepts in a Rust library
+    -   **[docs](https://rzmk.github.io/ladderz/)** - Documentation for the `ladderz` crate
 
 > The repository is not required to have the most efficient implementations, but rather learning to implement the concepts in code is a main endeavor. You may prefer other repositories for more efficient code & use cases.
 
