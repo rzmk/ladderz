@@ -11,12 +11,10 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
-            - name: Set up Rust
-              uses: actions-rs/toolchain@v1
-              with:
-                  toolchain: stable
+            - name: Install Rust (Stable)
+              run: curl https://sh.rustup.rs -sSf | sh -s -- -y
 
             - name: Build Documentation
               run: |
