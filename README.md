@@ -1,8 +1,8 @@
 # ladderz
 
-> This is a non-production repository and is for learning to implement concepts in code.
+The `ladderz` project is a collection of implementations of mathematical/technical concepts in code. A primary aim is to learn to implement these concepts, regardless of the efficiency of the implementations.
 
-The `ladderz` project is based on content from courses, primarily mathematical/technical concepts.
+> If you're looking for a more efficient implementation of a concept (e.g., for use in your programs), other resources may be more useful.
 
 You may find the following primary resources:
 
@@ -11,12 +11,17 @@ You may find the following primary resources:
 -   **[ladderz](ladderz)** - A crate with implementations of concepts in a Rust library
     -   **[docs](https://rzmk.github.io/ladderz/)** - Documentation for the `ladderz` crate
 
-> The repository is not required to have the most efficient implementations, but rather learning to implement the concepts in code is a main endeavor. You may prefer other repositories for more efficient code & use cases.
-
 ## Ideas
 
 Not currently implemented, but ideas that may be useful:
 
+-   Extend to:
+    -   Algebra
+    -   Calculus
+    -   Linear Algebra
+    -   Statistics
+    -   Discrete Math
+    -   Algorithms
 -   **py-ladderz** - A package for running implementations of mathematical concepts in Python
 -   **ladderz CLI** - A CLI tool for ladderz in Rust
 -   **ladderz App** - An interactive multi-platform (web, desktop, mobile) app potentially including visualizations, practice problems, & a course-like structure (potentially in Flutter or Tauri with Next.js & Rust)
