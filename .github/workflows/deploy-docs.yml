@@ -20,6 +20,9 @@ jobs:
               run: |
                   cd ladderz
                   cargo doc
+                  rm -rf ./docs
+                  echo '<meta http-equiv="refresh" content="0; url=https://rzmk.github.io/ladderz/ladderz/index.html" />' > ./target/doc/index.html
+                  cp -r ./target/doc ./docs
                   cd ..
 
             - name: Deploy to GitHub Pages
