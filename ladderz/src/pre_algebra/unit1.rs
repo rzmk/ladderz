@@ -1,14 +1,14 @@
 use std::collections::HashSet;
 
-/// Finds all factor pairs for a given positive integer.
-/// 
+/// Finds all factor pairs for a positive integer `n`.
+///
 /// # Challenge
-/// 
-/// Write a program that finds all the factor pairs for a given number `n`.
-/// 
+///
+/// Write a program that finds all the factor pairs for a number `n`.
+///
 /// # Description
-/// 
-/// Generates a `HashSet` of factor pairs for a given positive integer `n`.
+///
+/// Generates a `HashSet` of factor pairs for a positive integer `n`.
 ///
 /// This function calculates and returns a `HashSet` containing all unique factor pairs
 /// of the input positive integer `n`. A factor pair is a pair of positive integers
@@ -57,15 +57,15 @@ pub fn get_factor_pairs(n: u32) -> HashSet<(u32, u32)> {
     factor_pairs
 }
 
-/// Finds all factors of a given positive integer.
-/// 
+/// Finds all factors of a positive integer `n`.
+///
 /// # Challenge
-/// 
-/// Write a program that finds all the factors of a given number. Assume that `n` is a positive integer greater than or equal to 1.
+///
+/// Write a program that finds all the factors of a number. Assume that `n` is a positive integer greater than or equal to 1.
 ///
 /// # Description
-/// 
-/// Generates a `HashSet` of factors for a given positive integer `n`.
+///
+/// Generates a `HashSet` of factors for a positive integer `n`.
 ///
 /// This function calculates and returns a `HashSet` containing all unique factors
 /// of the input positive integer `n`. A factor of `n` is a positive integer `a` where
@@ -100,12 +100,87 @@ pub fn get_factor_pairs(n: u32) -> HashSet<(u32, u32)> {
 pub fn get_factors(n: u32) -> HashSet<u32> {
     let mut factors: HashSet<u32> = HashSet::new();
 
-    for num in 1..n+1 {
+    for num in 1..n + 1 {
         if n % num == 0 {
             factors.insert(num);
         }
     }
     factors
+}
+
+/// Checks if a positive integer `x` is a factor of another positive integer `y`.
+///
+/// # Challenge
+///
+/// Write a program that determines whether one positive integer is a factor of another.
+///
+/// # Description
+///
+/// Checks if a positive integer `x` is a factor of another positive integer `y`.
+///
+/// A factor of `y` is a positive integer `x` where `y` is evenly divisible by `x` (i.e., `y % x == 0`).
+///
+/// # Arguments
+///
+/// * `x` - The positive integer to determine whether it is a factor of `y` or not.
+/// * `y` - The positive integer for which the factor check of `x` is performed.
+///
+/// # Returns
+///
+/// `true` if `x` is a factor of `y`, `false` otherwise.
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::unit1::is_factor;
+///
+/// fn main() {
+///     assert!(is_factor(2, 16)); // 2 is a factor of 16
+///     assert!(!is_factor(3, 16)); // 3 is not a factor of 16
+/// }
+/// ```
+///
+/// # Note
+///
+/// This function determines if `x` is a factor of `y` by checking if `y` is evenly divisible by `x`
+/// (i.e., `y % x == 0`).
+pub fn is_factor(x: u32, y: u32) -> bool {
+    y % x == 0
+}
+
+/// Checks if a positive integer `x` is a multiple of another positive integer `y`.
+/// 
+/// # Challenge
+/// 
+/// Write a program that determines whether one positive integer is a multiple of another.
+///
+/// # Description
+/// 
+/// Checks if a positive integer `x` is a multiple of another positive integer `y`.
+///
+/// A multiple of `y` is a positive integer `x` where `x` is evenly divisible by `y` (i.e., `x % y == 0`).
+///
+/// # Arguments
+///
+/// * `x` - The positive integer to determine whether it is a multiple of `y` or not.
+/// * `y` - The positive integer for which the multiple check of `x` is performed.
+///
+/// # Returns
+///
+/// `true` if `x` is a multiple of `y`, `false` otherwise.
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::unit1::is_multiple;
+///
+/// fn main() {
+///     assert!(is_multiple(16, 2)); // 16 is a multiple of 2
+///     assert!(!is_multiple(16, 3)); // 16 is not a multiple of 3
+/// }
+/// ```
+pub fn is_multiple(x: u32, y: u32) -> bool {
+    x % y == 0
 }
 
 #[cfg(test)]
@@ -131,6 +206,28 @@ mod tests {
 
         let result_2: HashSet<u32> = get_factors(16);
         let expected_2: HashSet<u32> = [1, 2, 4, 8, 16].into();
+        assert_eq!(result_2, expected_2);
+    }
+
+    #[test]
+    fn test_is_factor() {
+        let result: bool = true;
+        let expected: bool = is_factor(2, 10);
+        assert_eq!(result, expected);
+
+        let result_2: bool = false;
+        let expected_2: bool =  is_factor(3, 10);
+        assert_eq!(result_2, expected_2);
+    }
+
+    #[test]
+    fn test_is_multiple() {
+        let result: bool = true;
+        let expected: bool = is_multiple(10, 2);
+        assert_eq!(result, expected);
+
+        let result_2: bool = false;
+        let expected_2: bool = is_multiple(11, 2);
         assert_eq!(result_2, expected_2);
     }
 }
