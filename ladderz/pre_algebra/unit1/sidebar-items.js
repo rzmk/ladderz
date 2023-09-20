@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"fn":["get_factor_pairs","get_factors"]};
+window.SIDEBAR_ITEMS = {"fn":["get_factor_pairs","get_factors","is_factor","is_multiple"]};
