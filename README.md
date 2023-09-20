@@ -17,6 +17,7 @@ Not currently implemented, but ideas that may be useful:
 
 -   Extend to:
     -   Algebra
+    -   Precalculus
     -   Calculus
     -   Linear Algebra
     -   Statistics
