@@ -441,13 +441,13 @@
 </span>}
 
 <span class="doccomment">/// Checks if a positive integer `x` is a multiple of another positive integer `y`.
-/// 
+///
 /// # Challenge
-/// 
+///
 /// Write a program that determines whether one positive integer is a multiple of another.
 ///
 /// # Description
-/// 
+///
 /// Checks if a positive integer `x` is a multiple of another positive integer `y`.
 ///
 /// A multiple of `y` is a positive integer `x` where `x` is evenly divisible by `y` (i.e., `x % y == 0`).
@@ -515,7 +515,7 @@
 </span><span class="kw">pub fn </span>get_multiples_in_range(n: u32, end: u32) -&gt; HashSet&lt;u32&gt; {
     <span class="kw">let </span><span class="kw-2">mut </span>multiples: HashSet&lt;u32&gt; = HashSet::new();
 
-    <span class="kw">for </span>num <span class="kw">in </span>n..end+<span class="number">1 </span>{
+    <span class="kw">for </span>num <span class="kw">in </span>n..end + <span class="number">1 </span>{
         <span class="kw">if </span>num % n == <span class="number">0 </span>{
             multiples.insert(num);
         }
@@ -556,7 +556,7 @@
         <span class="macro">assert_eq!</span>(result, expected);
 
         <span class="kw">let </span>result_2: bool = <span class="bool-val">false</span>;
-        <span class="kw">let </span>expected_2: bool =  is_factor(<span class="number">3</span>, <span class="number">10</span>);
+        <span class="kw">let </span>expected_2: bool = is_factor(<span class="number">3</span>, <span class="number">10</span>);
         <span class="macro">assert_eq!</span>(result_2, expected_2);
     }
 
