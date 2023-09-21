@@ -2,7 +2,7 @@
 <p>Implementations of mathematical and technical concepts in Rust.</p>
 <p>View <a href="#modules">the modules section</a> for the various implementations based on the subject.</p>
 <h2 id="example"><a href="#example">Example</a></h2>
-<p>Here’s an example of using the <code>ladderz</code> crate to get the factors and factor pairs of a number in sorted order.
+<p>Here’s an example of using the <code>ladderz</code> crate to get the factors and factor pairs of a positive integer in sorted order.
 We’ll assume you’re using Bash as your terminal.</p>
 <p>First let’s create a new Rust project and change into the project directory:</p>
 <div class="example-wrap"><pre class="language-bash"><code>cargo new my_ladderz_project
@@ -50,7 +50,7 @@ cd my_ladderz_project
 <p>Now let’s build the project’s binary file so we can run it from the command line:</p>
 <div class="example-wrap"><pre class="language-bash"><code>cargo build --release
 </code></pre></div>
-<p>Our runnable binary file should be located at the local path <code>./target/release/my_ladders_project</code> (or <code>./target/release/my_ladders_project.exe</code> for Windows). Let’s run it with the number <code>12</code> as input:</p>
+<p>Our runnable binary file should be located at the local path <code>./target/release/my_ladders_project</code> (or <code>./target/release/my_ladders_project.exe</code> for Windows). Let’s run it with the positive integer <code>12</code> as input:</p>
 <div class="example-wrap"><pre class="language-bash"><code>./target/release/my_ladderz_project 12
 </code></pre></div>
 <p>If you have a <code>.exe</code> file instead, you can run it with:</p>
@@ -60,5 +60,5 @@ cd my_ladderz_project
 
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code>List of factors of <span class="number">12</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">12</span>]
 List of factor pairs of <span class="number">12</span>: [(<span class="number">1</span>, <span class="number">12</span>), (<span class="number">2</span>, <span class="number">6</span>), (<span class="number">3</span>, <span class="number">4</span>)]</code></pre></div>
-<p>Great! We’ve successfully used the <code>ladderz</code> crate to get the factors and factor pairs of a number in sorted order.</p>
+<p>Great! We’ve successfully used the <code>ladderz</code> crate to get the factors and factor pairs of a positive integer in sorted order.</p>
 </div></details><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2><ul class="item-table"><li><div class="item-name"><a class="mod" href="pre_algebra/index.html" title="mod ladderz::pre_algebra">pre_algebra</a></div><div class="desc docblock-short">Various pre-algebra implementations including factor pairs, factors, multiples, and more.</div></li></ul></section></div></main></body></html>
