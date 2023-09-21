@@ -6,7 +6,7 @@
 //!
 //! # Example
 //!
-//! Here's an example of using the `ladderz` crate to get the factors and factor pairs of a number in sorted order.
+//! Here's an example of using the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
 //! We'll assume you're using Bash as your terminal.
 //!
 //! First let's create a new Rust project and change into the project directory:
@@ -67,7 +67,7 @@
 //! cargo build --release
 //! ```
 //!
-//! Our runnable binary file should be located at the local path `./target/release/my_ladders_project` (or `./target/release/my_ladders_project.exe` for Windows). Let's run it with the number `12` as input:
+//! Our runnable binary file should be located at the local path `./target/release/my_ladders_project` (or `./target/release/my_ladders_project.exe` for Windows). Let's run it with the positive integer `12` as input:
 //!
 //! ```bash
 //! ./target/release/my_ladderz_project 12
@@ -86,7 +86,7 @@
 //! List of factor pairs of 12: [(1, 12), (2, 6), (3, 4)]
 //! ```
 //!
-//! Great! We've successfully used the `ladderz` crate to get the factors and factor pairs of a number in sorted order.
+//! Great! We've successfully used the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
 
 /// Various pre-algebra implementations including factor pairs, factors, multiples, and more.
 pub mod pre_algebra;
