@@ -13,7 +13,7 @@ cd my_ladderz_project
 </code></pre></div>
 <p>Now in <code>src/main.rs</code> let’s replace the contents with the following code:</p>
 
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>ladderz::pre_algebra::unit1::{get_factor_pairs, get_factors};
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>ladderz::pre_algebra::{get_factors, get_factor_pairs};
 <span class="kw">use </span>std::env;
 
 <span class="kw">fn </span>main() {
@@ -57,8 +57,8 @@ cd my_ladderz_project
 <div class="example-wrap"><pre class="language-bash"><code>./target/release/my_ladderz_project.exe 12
 </code></pre></div>
 <p>The printed output should be:</p>
-
-<div class="example-wrap"><pre class="rust rust-example-rendered"><code>List of factors of <span class="number">12</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">12</span>]
-List of factor pairs of <span class="number">12</span>: [(<span class="number">1</span>, <span class="number">12</span>), (<span class="number">2</span>, <span class="number">6</span>), (<span class="number">3</span>, <span class="number">4</span>)]</code></pre></div>
+<div class="example-wrap"><pre class="language-console"><code>List of factors of 12: [1, 2, 3, 4, 6, 12]
+List of factor pairs of 12: [(1, 12), (2, 6), (3, 4)]
+</code></pre></div>
 <p>Great! We’ve successfully used the <code>ladderz</code> crate to get the factors and factor pairs of a positive integer in sorted order.</p>
 </div></details><h2 id="modules" class="small-section-header"><a href="#modules">Modules</a></h2><ul class="item-table"><li><div class="item-name"><a class="mod" href="pre_algebra/index.html" title="mod ladderz::pre_algebra">pre_algebra</a></div><div class="desc docblock-short">Various pre-algebra implementations including factor pairs, factors, multiples, and more.</div></li></ul></section></div></main></body></html>
