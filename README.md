@@ -92,7 +92,7 @@ List of factors of 12: [1, 2, 3, 4, 6, 12]
 List of factor pairs of 12: [(1, 12), (2, 6), (3, 4)]
 ```
 
-Great! We've successfully used the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
+We've successfully used the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
 
 ## Ideas
 
