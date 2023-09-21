@@ -1,17 +1,13 @@
 # ladderz
 
-The `ladderz` project is a collection of implementations of mathematical/technical concepts in code. A primary aim is to learn to implement these concepts, regardless of the efficiency of the implementations.
+The `ladderz` project is a collection of mathematical and technical concepts implemented in code.
+
+-   **[`ladderz` crate](https://rzmk.github.io/ladderz/)** - A Rust library crate for running concept implementations
+-   **[notebooks](notebooks)** - Jupyter notebooks with concept exercises and solutions in Python
 
 > If you're looking for a more efficient implementation of a concept (e.g., for use in your programs), other resources may be more useful.
 
--   **[notebooks](notebooks)** - Jupyter notebooks with exercises and solutions in Python
-    -   [**pre-algebra**](notebooks/pre-algebra) - Pre-algebra concepts
--   **[ladderz](ladderz)** - A crate with implementations of concepts in a Rust library
-    -   **[docs](https://rzmk.github.io/ladderz/)** - Documentation for the `ladderz` crate
-
-## ladderz Crate
-
-### Usage
+### Example
 
 Here's an example of using the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
 
