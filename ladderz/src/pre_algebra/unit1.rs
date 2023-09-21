@@ -123,8 +123,6 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
 
 /// Finds all the multiples of a positive integer `n` up to and including `end` (in the range [n, end]).
 ///
-/// Returns a `HashSet<u32>` containing all the multiples of a positive integer `n` in the range [n, end].
-///
 /// A multiple of `n` is a positive integer `num` where `num` is evenly divisible by `n` (i.e., `num % n == 0`).
 ///
 /// # Examples
