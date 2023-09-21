@@ -231,6 +231,65 @@
 <a href="#231" id="231">231</a>
 <a href="#232" id="232">232</a>
 <a href="#233" id="233">233</a>
+<a href="#234" id="234">234</a>
+<a href="#235" id="235">235</a>
+<a href="#236" id="236">236</a>
+<a href="#237" id="237">237</a>
+<a href="#238" id="238">238</a>
+<a href="#239" id="239">239</a>
+<a href="#240" id="240">240</a>
+<a href="#241" id="241">241</a>
+<a href="#242" id="242">242</a>
+<a href="#243" id="243">243</a>
+<a href="#244" id="244">244</a>
+<a href="#245" id="245">245</a>
+<a href="#246" id="246">246</a>
+<a href="#247" id="247">247</a>
+<a href="#248" id="248">248</a>
+<a href="#249" id="249">249</a>
+<a href="#250" id="250">250</a>
+<a href="#251" id="251">251</a>
+<a href="#252" id="252">252</a>
+<a href="#253" id="253">253</a>
+<a href="#254" id="254">254</a>
+<a href="#255" id="255">255</a>
+<a href="#256" id="256">256</a>
+<a href="#257" id="257">257</a>
+<a href="#258" id="258">258</a>
+<a href="#259" id="259">259</a>
+<a href="#260" id="260">260</a>
+<a href="#261" id="261">261</a>
+<a href="#262" id="262">262</a>
+<a href="#263" id="263">263</a>
+<a href="#264" id="264">264</a>
+<a href="#265" id="265">265</a>
+<a href="#266" id="266">266</a>
+<a href="#267" id="267">267</a>
+<a href="#268" id="268">268</a>
+<a href="#269" id="269">269</a>
+<a href="#270" id="270">270</a>
+<a href="#271" id="271">271</a>
+<a href="#272" id="272">272</a>
+<a href="#273" id="273">273</a>
+<a href="#274" id="274">274</a>
+<a href="#275" id="275">275</a>
+<a href="#276" id="276">276</a>
+<a href="#277" id="277">277</a>
+<a href="#278" id="278">278</a>
+<a href="#279" id="279">279</a>
+<a href="#280" id="280">280</a>
+<a href="#281" id="281">281</a>
+<a href="#282" id="282">282</a>
+<a href="#283" id="283">283</a>
+<a href="#284" id="284">284</a>
+<a href="#285" id="285">285</a>
+<a href="#286" id="286">286</a>
+<a href="#287" id="287">287</a>
+<a href="#288" id="288">288</a>
+<a href="#289" id="289">289</a>
+<a href="#290" id="290">290</a>
+<a href="#291" id="291">291</a>
+<a href="#292" id="292">292</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::HashSet;
 
 <span class="doccomment">/// Finds all factor pairs for a positive integer `n`.
@@ -416,6 +475,54 @@
     x % y == <span class="number">0
 </span>}
 
+<span class="doccomment">/// Finds all the multiples of a positive integer `n` up to and including `end` (in the range [n, end]).
+///
+/// # Challenge
+///
+/// Write a program that finds all the multiples of a positive integer `n` in a given range.
+///
+/// # Description
+///
+/// Returns a HashSet containing all the multiples of a positive integer `n` in the range [n, end].
+///
+/// A multiple of `n` is a positive integer `num` where `num` is evenly divisible by `n` (i.e., `num % n == 0`).
+///
+/// # Arguments
+///
+/// * `n` - The positive integer for which multiples are to be found.
+/// * `end` - The upper limit of the range for finding multiples.
+///
+/// # Returns
+///
+/// A HashSet containing all the multiples of `n` in the range [n, end].
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::unit1::get_multiples_in_range;
+/// use std::collections::HashSet;
+///
+/// fn main() {
+///     let result: HashSet&lt;u32&gt; = get_multiples_in_range(2, 10);
+///     let expected: HashSet&lt;u32&gt; = [2, 4, 6, 8, 10].into();
+///     assert_eq!(result, expected);
+///
+///     let result: HashSet&lt;u32&gt; = get_multiples_in_range(3, 15);
+///     let expected: HashSet&lt;u32&gt; = [3, 6, 9, 12, 15].into();
+///     assert_eq!(result, expected);
+/// }
+/// ```
+</span><span class="kw">pub fn </span>get_multiples_in_range(n: u32, end: u32) -&gt; HashSet&lt;u32&gt; {
+    <span class="kw">let </span><span class="kw-2">mut </span>multiples: HashSet&lt;u32&gt; = HashSet::new();
+
+    <span class="kw">for </span>num <span class="kw">in </span>n..end+<span class="number">1 </span>{
+        <span class="kw">if </span>num % n == <span class="number">0 </span>{
+            multiples.insert(num);
+        }
+    }
+    multiples
+}
+
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
@@ -461,6 +568,17 @@
 
         <span class="kw">let </span>result_2: bool = <span class="bool-val">false</span>;
         <span class="kw">let </span>expected_2: bool = is_multiple(<span class="number">11</span>, <span class="number">2</span>);
+        <span class="macro">assert_eq!</span>(result_2, expected_2);
+    }
+
+    <span class="attr">#[test]
+    </span><span class="kw">fn </span>test_get_multiples_in_range() {
+        <span class="kw">let </span>result: HashSet&lt;u32&gt; = get_multiples_in_range(<span class="number">2</span>, <span class="number">20</span>);
+        <span class="kw">let </span>expected: HashSet&lt;u32&gt; = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">16</span>, <span class="number">18</span>, <span class="number">20</span>].into();
+        <span class="macro">assert_eq!</span>(result, expected);
+
+        <span class="kw">let </span>result_2: HashSet&lt;u32&gt; = get_multiples_in_range(<span class="number">5</span>, <span class="number">34</span>);
+        <span class="kw">let </span>expected_2: HashSet&lt;u32&gt; = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>, <span class="number">30</span>].into();
         <span class="macro">assert_eq!</span>(result_2, expected_2);
     }
 }
