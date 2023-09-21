@@ -149,13 +149,13 @@ pub fn is_factor(x: u32, y: u32) -> bool {
 }
 
 /// Checks if a positive integer `x` is a multiple of another positive integer `y`.
-/// 
+///
 /// # Challenge
-/// 
+///
 /// Write a program that determines whether one positive integer is a multiple of another.
 ///
 /// # Description
-/// 
+///
 /// Checks if a positive integer `x` is a multiple of another positive integer `y`.
 ///
 /// A multiple of `y` is a positive integer `x` where `x` is evenly divisible by `y` (i.e., `x % y == 0`).
@@ -223,7 +223,7 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
 pub fn get_multiples_in_range(n: u32, end: u32) -> HashSet<u32> {
     let mut multiples: HashSet<u32> = HashSet::new();
 
-    for num in n..end+1 {
+    for num in n..end + 1 {
         if num % n == 0 {
             multiples.insert(num);
         }
@@ -264,7 +264,7 @@ mod tests {
         assert_eq!(result, expected);
 
         let result_2: bool = false;
-        let expected_2: bool =  is_factor(3, 10);
+        let expected_2: bool = is_factor(3, 10);
         assert_eq!(result_2, expected_2);
     }
 

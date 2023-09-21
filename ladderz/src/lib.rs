@@ -1,9 +1,11 @@
 //! # ladderz
-//! 
+//!
 //! Implementations of mathematical and technical concepts in Rust.
-//! 
+//!
+//! View [the modules section](#modules) for the various implementations based on the subject.
+//!
 //! # Example
-//! 
+//!
 //! Here's an example of using the `ladderz` crate to get the factors and factor pairs of a number in sorted order.
 //! We'll assume you're using Bash as your terminal.
 //!
