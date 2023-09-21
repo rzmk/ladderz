@@ -209,13 +209,19 @@
 <a href="#209" id="209">209</a>
 <a href="#210" id="210">210</a>
 <a href="#211" id="211">211</a>
+<a href="#212" id="212">212</a>
+<a href="#213" id="213">213</a>
+<a href="#214" id="214">214</a>
+<a href="#215" id="215">215</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::HashSet;
 
 <span class="doccomment">/// Finds all factor pairs for a positive integer `n`.
 ///
-/// This function calculates and returns a `HashSet&lt;(u32, u32)&gt;` containing all unique factor pairs
-/// of the input positive integer `n`. A factor pair is a pair of positive integers
+/// A factor pair is a pair of positive integers
 /// `(a, b)` where `a` and `b` are both factors of `n` (i.e., `a * b == n`).
+/// 
+/// This function calculates and returns a `HashSet&lt;(u32, u32)&gt;` containing all unique factor pairs
+/// of the input positive integer `n`.
 ///
 /// # Examples
 ///
@@ -253,10 +259,12 @@
 }
 
 <span class="doccomment">/// Finds all factors of a positive integer `n`.
+/// 
+/// A factor of `n` is a positive integer `a` where
+/// `n` is evenly divisible by `a` (i.e., `n % a == 0`).
 ///
 /// This function calculates and returns a `HashSet&lt;u32&gt;` containing all unique factors
-/// of the input positive integer `n`. A factor of `n` is a positive integer `a` where
-/// `n` is evenly divisible by `a` (i.e., `n % a == 0`).
+/// of the input positive integer `n`.
 ///
 /// # Examples
 ///
