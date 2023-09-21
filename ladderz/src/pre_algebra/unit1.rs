@@ -2,9 +2,11 @@ use std::collections::HashSet;
 
 /// Finds all factor pairs for a positive integer `n`.
 ///
-/// This function calculates and returns a `HashSet<(u32, u32)>` containing all unique factor pairs
-/// of the input positive integer `n`. A factor pair is a pair of positive integers
+/// A factor pair is a pair of positive integers
 /// `(a, b)` where `a` and `b` are both factors of `n` (i.e., `a * b == n`).
+/// 
+/// This function calculates and returns a `HashSet<(u32, u32)>` containing all unique factor pairs
+/// of the input positive integer `n`.
 ///
 /// # Examples
 ///
@@ -42,10 +44,12 @@ pub fn get_factor_pairs(n: u32) -> HashSet<(u32, u32)> {
 }
 
 /// Finds all factors of a positive integer `n`.
+/// 
+/// A factor of `n` is a positive integer `a` where
+/// `n` is evenly divisible by `a` (i.e., `n % a == 0`).
 ///
 /// This function calculates and returns a `HashSet<u32>` containing all unique factors
-/// of the input positive integer `n`. A factor of `n` is a positive integer `a` where
-/// `n` is evenly divisible by `a` (i.e., `n % a == 0`).
+/// of the input positive integer `n`.
 ///
 /// # Examples
 ///
