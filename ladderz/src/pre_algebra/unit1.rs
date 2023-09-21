@@ -183,7 +183,7 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
     x % y == 0
 }
 
-/// Returns a HashSet containing all the multiples of a positive integer `n` in the range [n, end].
+/// Finds all the multiples of a positive integer `n` up to and including `end` (in the range [n, end]).
 ///
 /// # Challenge
 ///
