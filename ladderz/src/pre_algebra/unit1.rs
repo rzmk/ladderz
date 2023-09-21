@@ -2,31 +2,15 @@ use std::collections::HashSet;
 
 /// Finds all factor pairs for a positive integer `n`.
 ///
-/// # Challenge
-///
-/// Write a program that finds all the factor pairs for a number `n`.
-///
-/// # Description
-///
-/// Generates a `HashSet` of factor pairs for a positive integer `n`.
-///
-/// This function calculates and returns a `HashSet` containing all unique factor pairs
+/// This function calculates and returns a `HashSet<(u32, u32)>` containing all unique factor pairs
 /// of the input positive integer `n`. A factor pair is a pair of positive integers
 /// `(a, b)` where `a` and `b` are both factors of `n` (i.e., `a * b == n`).
-///
-/// # Arguments
-///
-/// * `n` - The positive integer for which factor pairs are to be calculated.
-///
-/// # Returns
-///
-/// A `HashSet` containing all unique factor pairs of the input integer `n`.
 ///
 /// # Examples
 ///
 /// ```rust
 /// use std::collections::HashSet;
-/// use ladderz::pre_algebra::unit1::get_factor_pairs;
+/// use ladderz::pre_algebra::get_factor_pairs;
 ///
 /// fn main() {
 ///     let result_pairs = get_factor_pairs(12);
@@ -59,31 +43,15 @@ pub fn get_factor_pairs(n: u32) -> HashSet<(u32, u32)> {
 
 /// Finds all factors of a positive integer `n`.
 ///
-/// # Challenge
-///
-/// Write a program that finds all the factors of a number. Assume that `n` is a positive integer greater than or equal to 1.
-///
-/// # Description
-///
-/// Generates a `HashSet` of factors for a positive integer `n`.
-///
-/// This function calculates and returns a `HashSet` containing all unique factors
+/// This function calculates and returns a `HashSet<u32>` containing all unique factors
 /// of the input positive integer `n`. A factor of `n` is a positive integer `a` where
 /// `n` is evenly divisible by `a` (i.e., `n % a == 0`).
-///
-/// # Arguments
-///
-/// * `n` - The positive integer for which factors are to be calculated.
-///
-/// # Returns
-///
-/// A `HashSet` containing all unique factors of the input integer `n`.
 ///
 /// # Examples
 ///
 /// ```rust
 /// use std::collections::HashSet;
-/// use ladderz::pre_algebra::unit1::get_factors;
+/// use ladderz::pre_algebra::get_factors;
 ///
 /// fn main() {
 ///     let result_factors = get_factors(16);
@@ -110,29 +78,12 @@ pub fn get_factors(n: u32) -> HashSet<u32> {
 
 /// Checks if a positive integer `x` is a factor of another positive integer `y`.
 ///
-/// # Challenge
-///
-/// Write a program that determines whether one positive integer is a factor of another.
-///
-/// # Description
-///
-/// Checks if a positive integer `x` is a factor of another positive integer `y`.
-///
 /// A factor of `y` is a positive integer `x` where `y` is evenly divisible by `x` (i.e., `y % x == 0`).
-///
-/// # Arguments
-///
-/// * `x` - The positive integer to determine whether it is a factor of `y` or not.
-/// * `y` - The positive integer for which the factor check of `x` is performed.
-///
-/// # Returns
-///
-/// `true` if `x` is a factor of `y`, `false` otherwise.
 ///
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::unit1::is_factor;
+/// use ladderz::pre_algebra::is_factor;
 ///
 /// fn main() {
 ///     assert!(is_factor(2, 16)); // 2 is a factor of 16
@@ -150,29 +101,12 @@ pub fn is_factor(x: u32, y: u32) -> bool {
 
 /// Checks if a positive integer `x` is a multiple of another positive integer `y`.
 ///
-/// # Challenge
-///
-/// Write a program that determines whether one positive integer is a multiple of another.
-///
-/// # Description
-///
-/// Checks if a positive integer `x` is a multiple of another positive integer `y`.
-///
 /// A multiple of `y` is a positive integer `x` where `x` is evenly divisible by `y` (i.e., `x % y == 0`).
-///
-/// # Arguments
-///
-/// * `x` - The positive integer to determine whether it is a multiple of `y` or not.
-/// * `y` - The positive integer for which the multiple check of `x` is performed.
-///
-/// # Returns
-///
-/// `true` if `x` is a multiple of `y`, `false` otherwise.
 ///
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::unit1::is_multiple;
+/// use ladderz::pre_algebra::is_multiple;
 ///
 /// fn main() {
 ///     assert!(is_multiple(16, 2)); // 16 is a multiple of 2
@@ -185,29 +119,14 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
 
 /// Finds all the multiples of a positive integer `n` up to and including `end` (in the range [n, end]).
 ///
-/// # Challenge
-///
-/// Write a program that finds all the multiples of a positive integer `n` in a given range.
-///
-/// # Description
-///
-/// Returns a HashSet containing all the multiples of a positive integer `n` in the range [n, end].
+/// Returns a `HashSet<u32>` containing all the multiples of a positive integer `n` in the range [n, end].
 ///
 /// A multiple of `n` is a positive integer `num` where `num` is evenly divisible by `n` (i.e., `num % n == 0`).
-///
-/// # Arguments
-///
-/// * `n` - The positive integer for which multiples are to be found.
-/// * `end` - The upper limit of the range for finding multiples.
-///
-/// # Returns
-///
-/// A HashSet containing all the multiples of `n` in the range [n, end].
 ///
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::unit1::get_multiples_in_range;
+/// use ladderz::pre_algebra::get_multiples_in_range;
 /// use std::collections::HashSet;
 ///
 /// fn main() {

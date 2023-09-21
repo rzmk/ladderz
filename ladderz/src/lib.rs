@@ -25,7 +25,7 @@
 //! Now in `src/main.rs` let's replace the contents with the following code:
 //!
 //! ```rust
-//! use ladderz::pre_algebra::unit1::{get_factor_pairs, get_factors};
+//! use ladderz::pre_algebra::{get_factors, get_factor_pairs};
 //! use std::env;
 //!
 //! fn main() {
@@ -81,7 +81,7 @@
 //!
 //! The printed output should be:
 //!
-//! ```
+//! ```console
 //! List of factors of 12: [1, 2, 3, 4, 6, 12]
 //! List of factor pairs of 12: [(1, 12), (2, 6), (3, 4)]
 //! ```

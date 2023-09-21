@@ -31,7 +31,7 @@ ladderz = { git = "https://github.com/rzmk/ladderz", branch = "main" }
 Now in `src/main.rs` let's replace the contents with the following code:
 
 ```rust
-use ladderz::pre_algebra::unit1::{get_factor_pairs, get_factors};
+use ladderz::pre_algebra::{get_factors, get_factor_pairs};
 use std::env;
 
 fn main() {
