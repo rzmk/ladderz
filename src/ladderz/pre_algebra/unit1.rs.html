@@ -241,7 +241,6 @@
 <a href="#241" id="241">241</a>
 <a href="#242" id="242">242</a>
 <a href="#243" id="243">243</a>
-<a href="#244" id="244">244</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::HashSet;
 
 <span class="doccomment">/// Finds all factor pairs for a positive integer `n`.
@@ -470,8 +469,7 @@
         <span class="kw">let </span>expected_2: HashSet&lt;u32&gt; = [<span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">20</span>, <span class="number">25</span>, <span class="number">30</span>].into();
         <span class="macro">assert_eq!</span>(result_2, expected_2);
 
-        <span class="comment">// Test when the range has no multiples
-        </span><span class="kw">let </span>result_3: HashSet&lt;u32&gt; = get_multiples_in_range(<span class="number">7</span>, <span class="number">11</span>);
+        <span class="kw">let </span>result_3: HashSet&lt;u32&gt; = get_multiples_in_range(<span class="number">7</span>, <span class="number">11</span>);
         <span class="kw">let </span>expected_3: HashSet&lt;u32&gt; = [<span class="number">7</span>].into();
         <span class="macro">assert_eq!</span>(expected_3, result_3);
     }
