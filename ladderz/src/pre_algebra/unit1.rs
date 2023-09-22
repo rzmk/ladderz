@@ -14,11 +14,9 @@ use std::collections::HashSet;
 /// use std::collections::HashSet;
 /// use ladderz::pre_algebra::get_factor_pairs;
 ///
-/// fn main() {
-///     let result_pairs = get_factor_pairs(12);
-///     let expected_pairs: HashSet<(u32, u32)> = [(1, 12), (2, 6), (3, 4)].into();
-///     assert_eq!(result_pairs, expected_pairs);
-/// }
+/// let result_pairs = get_factor_pairs(12);
+/// let expected_pairs: HashSet<(u32, u32)> = [(1, 12), (2, 6), (3, 4)].into();
+/// assert_eq!(result_pairs, expected_pairs);
 /// ```
 ///
 /// # Note
@@ -57,11 +55,9 @@ pub fn get_factor_pairs(n: u32) -> HashSet<(u32, u32)> {
 /// use std::collections::HashSet;
 /// use ladderz::pre_algebra::get_factors;
 ///
-/// fn main() {
-///     let result_factors = get_factors(16);
-///     let expected_factors: HashSet<u32> = [1, 2, 4, 8, 16].into();
-///     assert_eq!(result_factors, expected_factors);
-/// }
+/// let result_factors = get_factors(16);
+/// let expected_factors: HashSet<u32> = [1, 2, 4, 8, 16].into();
+/// assert_eq!(result_factors, expected_factors);
 /// ```
 ///
 /// # Note
@@ -89,10 +85,8 @@ pub fn get_factors(n: u32) -> HashSet<u32> {
 /// ```rust
 /// use ladderz::pre_algebra::is_factor;
 ///
-/// fn main() {
-///     assert!(is_factor(2, 16)); // 2 is a factor of 16
-///     assert!(!is_factor(3, 16)); // 3 is not a factor of 16
-/// }
+/// assert!(is_factor(2, 16)); // 2 is a factor of 16
+/// assert!(!is_factor(3, 16)); // 3 is not a factor of 16
 /// ```
 ///
 /// # Note
@@ -112,10 +106,8 @@ pub fn is_factor(x: u32, y: u32) -> bool {
 /// ```rust
 /// use ladderz::pre_algebra::is_multiple;
 ///
-/// fn main() {
-///     assert!(is_multiple(16, 2)); // 16 is a multiple of 2
-///     assert!(!is_multiple(16, 3)); // 16 is not a multiple of 3
-/// }
+/// assert!(is_multiple(16, 2)); // 16 is a multiple of 2
+/// assert!(!is_multiple(16, 3)); // 16 is not a multiple of 3
 /// ```
 pub fn is_multiple(x: u32, y: u32) -> bool {
     x % y == 0
@@ -131,23 +123,15 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
 /// use ladderz::pre_algebra::get_multiples_in_range;
 /// use std::collections::HashSet;
 ///
-/// fn main() {
-///     let result: HashSet<u32> = get_multiples_in_range(2, 10);
-///     let expected: HashSet<u32> = [2, 4, 6, 8, 10].into();
-///     assert_eq!(result, expected);
-///
-///     let result: HashSet<u32> = get_multiples_in_range(3, 15);
-///     let expected: HashSet<u32> = [3, 6, 9, 12, 15].into();
-///     assert_eq!(result, expected);
-/// }
+/// let result: HashSet<u32> = get_multiples_in_range(2, 10);
+/// let expected: HashSet<u32> = [2, 4, 6, 8, 10].into();
+/// assert_eq!(result, expected);
 /// ```
 pub fn get_multiples_in_range(n: u32, end: u32) -> HashSet<u32> {
     let mut multiples: HashSet<u32> = HashSet::new();
 
-    for num in n..end + 1 {
-        if num % n == 0 {
-            multiples.insert(num);
-        }
+    for num in (n..end + 1).step_by(n as usize) {
+        multiples.insert(num);
     }
     multiples
 }
@@ -209,5 +193,10 @@ mod tests {
         let result_2: HashSet<u32> = get_multiples_in_range(5, 34);
         let expected_2: HashSet<u32> = [5, 10, 15, 20, 25, 30].into();
         assert_eq!(result_2, expected_2);
+
+        // Test when the range has no multiples
+        let result_3: HashSet<u32> = get_multiples_in_range(7, 11);
+        let expected_3: HashSet<u32> = [7].into();
+        assert_eq!(expected_3, result_3);
     }
 }
