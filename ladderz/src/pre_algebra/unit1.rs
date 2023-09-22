@@ -138,8 +138,8 @@ pub fn get_multiples_in_range(n: u32, end: u32) -> HashSet<u32> {
 
 /// Checks if a positive integer `n` is a prime number.
 ///
-/// A prime number is a positive integer greater than 1 that cannot
-/// be evenly divisible by any positive integers other than 1 and itself.
+/// A prime number is a positive integer greater than 1 that is
+/// not evenly divisible by any positive integer other than 1 and itself.
 ///
 /// # Examples
 ///
@@ -166,6 +166,30 @@ pub fn is_prime(n: u32) -> bool {
         }
     }
     true
+}
+
+/// Checks if a positive integer `n` is a composite number.
+///
+/// A composite number is a positive integer that is evenly divisible
+/// by a positive integer other than 1 and itself.
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::is_composite;
+///
+/// assert!(!is_composite(1)); // 1 is not a composite number
+/// assert!(!is_composite(2)); // 2 is not a composite number
+/// assert!(is_composite(4)); // 4 is a composite number
+/// assert!(!is_composite(7)); // 7 is not a composite number
+/// ```
+pub fn is_composite(n: u32) -> bool {
+    for num in 1..n {
+        if n % num == 0 && num != 1 && num != n {
+            return true;
+        }
+    }
+    false
 }
 
 #[cfg(test)]
@@ -239,5 +263,16 @@ mod tests {
         assert!(!is_prime(51));
         assert!(is_prime(23));
         assert!(!is_prime(9514));
+    }
+
+    #[test]
+    fn test_is_composite() {
+        assert!(!is_composite(1));
+        assert!(!is_composite(2));
+        assert!(!is_composite(3));
+        assert!(is_composite(4));
+        assert!(is_composite(8));
+        assert!(is_composite(27));
+        assert!(is_composite(51));
     }
 }
