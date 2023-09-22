@@ -231,4 +231,14 @@ mod tests {
         let expected_3: HashSet<u32> = [7].into();
         assert_eq!(expected_3, result_3);
     }
+
+    #[test]
+    fn test_is_prime() {
+        assert!(!is_prime(1));
+        assert!(is_prime(2));
+        assert!(is_prime(3));
+        assert!(!is_prime(51));
+        assert!(is_prime(23));
+        assert!(!is_prime(9514));
+    }
 }
