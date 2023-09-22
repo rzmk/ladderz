@@ -136,6 +136,38 @@ pub fn get_multiples_in_range(n: u32, end: u32) -> HashSet<u32> {
     multiples
 }
 
+/// Checks if a positive integer `n` is a prime number.
+///
+/// A prime number is a positive integer greater than 1 that cannot
+/// be evenly divisible by any positive integers other than 1 and itself.
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::is_prime;
+///
+/// assert!(!is_prime(1)); // 1 is not a prime number
+/// assert!(is_prime(2)); // 2 is a prime number
+/// assert!(!is_prime(4)); // 4 is not a prime number
+/// assert!(is_prime(7)); // 7 is a prime number
+/// ```
+///
+/// # Note
+///
+/// This function returns `false` for values of `n` less than 2 because, by definition, prime
+/// numbers must be greater than 1.
+pub fn is_prime(n: u32) -> bool {
+    if n == 1 {
+        return false;
+    };
+    for num in 2..n {
+        if n % num == 0 {
+            return false;
+        }
+    }
+    true
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
