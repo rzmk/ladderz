@@ -232,6 +232,16 @@
 <a href="#232" id="232">232</a>
 <a href="#233" id="233">233</a>
 <a href="#234" id="234">234</a>
+<a href="#235" id="235">235</a>
+<a href="#236" id="236">236</a>
+<a href="#237" id="237">237</a>
+<a href="#238" id="238">238</a>
+<a href="#239" id="239">239</a>
+<a href="#240" id="240">240</a>
+<a href="#241" id="241">241</a>
+<a href="#242" id="242">242</a>
+<a href="#243" id="243">243</a>
+<a href="#244" id="244">244</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::HashSet;
 
 <span class="doccomment">/// Finds all factor pairs for a positive integer `n`.
@@ -464,6 +474,16 @@
         </span><span class="kw">let </span>result_3: HashSet&lt;u32&gt; = get_multiples_in_range(<span class="number">7</span>, <span class="number">11</span>);
         <span class="kw">let </span>expected_3: HashSet&lt;u32&gt; = [<span class="number">7</span>].into();
         <span class="macro">assert_eq!</span>(expected_3, result_3);
+    }
+
+    <span class="attr">#[test]
+    </span><span class="kw">fn </span>test_is_prime() {
+        <span class="macro">assert!</span>(!is_prime(<span class="number">1</span>));
+        <span class="macro">assert!</span>(is_prime(<span class="number">2</span>));
+        <span class="macro">assert!</span>(is_prime(<span class="number">3</span>));
+        <span class="macro">assert!</span>(!is_prime(<span class="number">51</span>));
+        <span class="macro">assert!</span>(is_prime(<span class="number">23</span>));
+        <span class="macro">assert!</span>(!is_prime(<span class="number">9514</span>));
     }
 }
 </code></pre></div></section></main></body></html>
