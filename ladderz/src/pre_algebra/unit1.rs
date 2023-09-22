@@ -226,7 +226,6 @@ mod tests {
         let expected_2: HashSet<u32> = [5, 10, 15, 20, 25, 30].into();
         assert_eq!(result_2, expected_2);
 
-        // Test when the range has no multiples
         let result_3: HashSet<u32> = get_multiples_in_range(7, 11);
         let expected_3: HashSet<u32> = [7].into();
         assert_eq!(expected_3, result_3);
