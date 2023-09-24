@@ -1,6 +1,6 @@
 # ladderz
 
-The `ladderz` project is a collection of mathematical and technical concepts implemented in code.
+The `ladderz` project is a collection of math and tech concepts implemented in code.
 
 -   **[`ladderz` crate](https://rzmk.github.io/ladderz/)** - A Rust library crate for running concept implementations
 -   **[notebooks](notebooks)** - Jupyter notebooks with concept exercises and solutions in Python
