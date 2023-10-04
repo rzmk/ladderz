@@ -12,6 +12,7 @@ The `ladderz` project is a collection of math and tech concepts implemented in c
 #### Demo
 
 ![ladderz-crate-demo](ladderz-crate-demo.png)
+![ladderz-crate-demo-output](ladderz-crate-demo-output.png)
 
 #### Example
 
