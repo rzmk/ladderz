@@ -7,7 +7,13 @@ The `ladderz` project is a collection of math and tech concepts implemented in c
 
 > If you're looking for a more efficient implementation of a concept (e.g., for use in your programs), other resources may be more useful.
 
-### Example
+### `ladderz` crate
+
+#### Demo
+
+![ladderz-crate-demo](ladderz-crate-demo.png)
+
+#### Example
 
 Here's an example of using the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
 
