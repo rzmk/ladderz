@@ -575,7 +575,7 @@
     <span class="bool-val">false
 </span>}
 
-<span class="doccomment">/// Write a program that finds all prime numbers of a positive integer `n` in the range [start, n].
+<span class="doccomment">/// Write a program that finds all prime numbers in the range [start, end] within the natural numbers.
 ///
 /// A prime number is a positive integer greater than 1 that is
 /// not evenly divisible by any positive integer other than 1 and itself.
@@ -590,10 +590,10 @@
 /// let expected: HashSet&lt;u32&gt; = [2, 3, 5, 7].into();
 /// assert_eq!(result, expected);
 /// ```
-</span><span class="kw">pub fn </span>get_primes_in_range(start: u32, n: u32) -&gt; HashSet&lt;u32&gt; {
+</span><span class="kw">pub fn </span>get_primes_in_range(start: u32, end: u32) -&gt; HashSet&lt;u32&gt; {
     <span class="kw">let </span><span class="kw-2">mut </span>primes: HashSet&lt;u32&gt; = HashSet::new();
 
-    <span class="kw">for </span>num <span class="kw">in </span>start..n + <span class="number">1 </span>{
+    <span class="kw">for </span>num <span class="kw">in </span>start..end + <span class="number">1 </span>{
         <span class="kw">if </span>is_prime(num) {
             primes.insert(num);
         }
