@@ -1,4 +1,4 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
 /// Finds all factor pairs for a positive integer `n`.
 ///
@@ -192,6 +192,68 @@ pub fn is_composite(n: u32) -> bool {
     false
 }
 
+/// Write a program that finds all prime numbers of a positive integer `n` in the range [start, n].
+///
+/// A prime number is a positive integer greater than 1 that is
+/// not evenly divisible by any positive integer other than 1 and itself.
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::get_primes_in_range;
+/// use std::collections::HashSet;
+///
+/// let result: HashSet<u32> = get_primes_in_range(2, 10);
+/// let expected: HashSet<u32> = [2, 3, 5, 7].into();
+/// assert_eq!(result, expected);
+/// ```
+pub fn get_primes_in_range(start: u32, n: u32) -> HashSet<u32> {
+    let mut primes: HashSet<u32> = HashSet::new();
+
+    for num in start..n + 1 {
+        if is_prime(num) {
+            primes.insert(num);
+        }
+    }
+    primes
+}
+
+/// Write a program that determines the prime factorization of a positive integer `n`.
+///
+/// For example the prime factorization of 12 is 2<sup>2</sup> * 3<sup>1</sup>, and the output is a HashMap of the form
+/// `[(2, 2), (3, 1)]` where the first element of each tuple is the prime factor and the second element is the exponent.
+///
+/// # Examples
+///
+/// ```rust
+/// use ladderz::pre_algebra::get_prime_factorization;
+/// use std::collections::HashMap;
+///
+/// let result: HashMap<u32, u32> = get_prime_factorization(12);
+/// let expected: HashMap<u32, u32> = [(2, 2), (3, 1)].into();
+/// assert_eq!(result, expected);
+/// ```
+pub fn get_prime_factorization(n: u32) -> HashMap<u32, u32> {
+    if n == 1 {
+        return HashMap::new();
+    }
+
+    let mut prime_factors: HashMap<u32, u32> = HashMap::new();
+    let mut current_num: u32 = n;
+    let primes_of_n: HashSet<u32> = get_primes_in_range(2, n);
+
+    for prime in primes_of_n {
+        while current_num % prime == 0 {
+            prime_factors
+                .entry(prime)
+                .and_modify(|e| *e += 1)
+                .or_insert(1);
+            current_num /= prime;
+        }
+    }
+    prime_factors
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -274,5 +336,48 @@ mod tests {
         assert!(is_composite(8));
         assert!(is_composite(27));
         assert!(is_composite(51));
+    }
+
+    #[test]
+    fn test_get_primes_in_range() {
+        let result: HashSet<u32> = get_primes_in_range(2, 10);
+        let expected: HashSet<u32> = [2, 3, 5, 7].into();
+        assert_eq!(result, expected);
+
+        let result_2: HashSet<u32> = get_primes_in_range(1, 10);
+        let expected_2: HashSet<u32> = [2, 3, 5, 7].into();
+        assert_eq!(result_2, expected_2);
+
+        let result_3: HashSet<u32> = get_primes_in_range(1, 1);
+        let expected_3: HashSet<u32> = [].into();
+        assert_eq!(result_3, expected_3);
+
+        let result_4: HashSet<u32> = get_primes_in_range(1, 50);
+        let expected_4: HashSet<u32> =
+            [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47].into();
+        assert_eq!(result_4, expected_4);
+    }
+
+    #[test]
+    fn test_get_prime_factorization() {
+        let result: HashMap<u32, u32> = get_prime_factorization(1);
+        let expected: HashMap<u32, u32> = HashMap::new();
+        assert_eq!(result, expected);
+
+        let result_2: HashMap<u32, u32> = get_prime_factorization(12);
+        let expected_2: HashMap<u32, u32> = [(2, 2), (3, 1)].into();
+        assert_eq!(result_2, expected_2);
+
+        let result_3: HashMap<u32, u32> = get_prime_factorization(16);
+        let expected_3: HashMap<u32, u32> = [(2, 4)].into();
+        assert_eq!(result_3, expected_3);
+
+        let result_4: HashMap<u32, u32> = get_prime_factorization(27);
+        let expected_4: HashMap<u32, u32> = [(3, 3)].into();
+        assert_eq!(result_4, expected_4);
+
+        let result_5: HashMap<u32, u32> = get_prime_factorization(51);
+        let expected_5: HashMap<u32, u32> = [(3, 1), (17, 1)].into();
+        assert_eq!(result_5, expected_5);
     }
 }
