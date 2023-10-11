@@ -192,7 +192,7 @@ pub fn is_composite(n: u32) -> bool {
     false
 }
 
-/// Write a program that finds all prime numbers of a positive integer `n` in the range [start, n].
+/// Write a program that finds all prime numbers in the range [start, end] within the natural numbers.
 ///
 /// A prime number is a positive integer greater than 1 that is
 /// not evenly divisible by any positive integer other than 1 and itself.
@@ -207,10 +207,10 @@ pub fn is_composite(n: u32) -> bool {
 /// let expected: HashSet<u32> = [2, 3, 5, 7].into();
 /// assert_eq!(result, expected);
 /// ```
-pub fn get_primes_in_range(start: u32, n: u32) -> HashSet<u32> {
+pub fn get_primes_in_range(start: u32, end: u32) -> HashSet<u32> {
     let mut primes: HashSet<u32> = HashSet::new();
 
-    for num in start..n + 1 {
+    for num in start..end + 1 {
         if is_prime(num) {
             primes.insert(num);
         }
