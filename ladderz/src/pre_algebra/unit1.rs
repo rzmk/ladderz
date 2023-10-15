@@ -192,7 +192,7 @@ pub fn is_composite(n: u32) -> bool {
     false
 }
 
-/// Write a program that finds all prime numbers in the range [start, end] within the natural numbers.
+/// Returns all prime numbers in the range [start, end].
 ///
 /// A prime number is a positive integer greater than 1 that is
 /// not evenly divisible by any positive integer other than 1 and itself.
@@ -218,7 +218,7 @@ pub fn get_primes_in_range(start: u32, end: u32) -> HashSet<u32> {
     primes
 }
 
-/// Write a program that determines the prime factorization of a positive integer `n`.
+/// Returns the prime factorization of a positive integer `n`.
 ///
 /// For example the prime factorization of 12 is 2<sup>2</sup> * 3<sup>1</sup>, and the output is a HashMap of the form
 /// `[(2, 2), (3, 1)]` where the first element of each tuple is the prime factor and the second element is the exponent.
