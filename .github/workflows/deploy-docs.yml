@@ -18,8 +18,7 @@ jobs:
 
             - name: Build Documentation
               run: |
-                  cd ladderz
-                  cargo doc
+                  cargo doc --no-deps
                   echo '<meta http-equiv="refresh" content="0; url=https://rzmk.github.io/ladderz/ladderz/index.html" />' > ./target/doc/index.html
                   cd ..
 
@@ -27,4 +26,4 @@ jobs:
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./ladderz/target/doc
+                  publish_dir: ./target/doc

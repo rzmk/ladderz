@@ -2,19 +2,61 @@
 
 The `ladderz` project is a collection of math and tech concepts implemented in code.
 
--   **[`ladderz` crate](https://rzmk.github.io/ladderz/)** - A Rust library crate for running concept implementations
+-   **[`ladderz` library](https://rzmk.github.io/ladderz/)** - A Rust library for running concept implementations
+-   **[`lz` CLI](lz)** - A command line tool for running ladderz functions
 -   **[notebooks](notebooks)** - Jupyter notebooks with concept exercises and solutions in Python
 
 > If you're looking for a more efficient implementation of a concept (e.g., for use in your programs), other resources may be more useful.
 
-### `ladderz` crate
+## Demos
 
-#### Demo
+### `lz` CLI Demo
 
-![ladderz-crate-demo](ladderz-crate-demo.png)
-![ladderz-crate-demo-output](ladderz-crate-demo-output.png)
+### ladderz Library Demo
 
-#### Example
+## CLI Example
+
+The `lz` CLI tool can be used to run ladderz functions from the command line. Built with the [clap](https://clap.rs) crate, users may select a subject and concept to run on their given input.
+
+First let's install the `lz` CLI tool using [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html):
+
+```bash
+cargo install --git https://github.com/rzmk/ladderz --branch main
+```
+
+You may read the help text for the `lz` CLI tool and its subcommands with a `-h` or `--help` flag. For example, to read the help text for the `prealgebra` subject run:
+
+```bash
+lz prealgebra -h
+```
+
+Now let's run the `lz` CLI tool with the `prealgebra` subject and `get-factors` concept as an example. We want to get the factors of the positive integer `12`:
+
+```bash
+lz prealgebra get-factors 12
+```
+
+The printed output should be:
+
+```console
+The factors of 12 are {2, 3, 6, 1, 4, 12}.
+```
+
+We can use the `--raw` flag to get the raw output of the function:
+
+```bash
+lz prealgebra get-factors 12 --raw
+```
+
+The printed output should be:
+
+```console
+{1, 2, 3, 4, 6, 12}
+```
+
+Note that the numbers may not be sorted.
+
+## Library Example
 
 Here's an example of using the `ladderz` crate to get the factors and factor pairs of a positive integer in sorted order.
 
@@ -34,7 +76,7 @@ ladderz = { git = "https://github.com/rzmk/ladderz", branch = "main" }
 Now in `src/main.rs` let's replace the contents with the following code:
 
 ```rust
-use ladderz::pre_algebra::{get_factors, get_factor_pairs};
+use ladderz::prealgebra::{get_factors, get_factor_pairs};
 use std::env;
 
 fn main() {
@@ -67,7 +109,6 @@ fn main() {
         None => println!("No input provided."),
     }
 }
-
 ```
 
 Now let's build the project's binary file so we can run it from the command line:
@@ -109,6 +150,6 @@ Not currently implemented, but ideas that may be useful:
     -   Statistics
     -   Discrete Math
     -   Algorithms
--   **py-ladderz** - A package for running implementations of mathematical concepts in Python
--   **ladderz CLI** - A CLI tool for ladderz in Rust
--   **ladderz App** - An interactive multi-platform (web, desktop, mobile) app potentially including visualizations, practice problems, & a course-like structure (potentially in Flutter or Tauri with Next.js & Rust)
+    -   Bioinformatics
+-   **ladderz-py** - A package for running implementations of mathematical concepts in Python
+-   **ladderz-app** - An interactive cross-platform (web, desktop, mobile) app potentially including visualizations, practice problems, & a course-like structure (potentially in Flutter or Tauri with Next.js & Rust)

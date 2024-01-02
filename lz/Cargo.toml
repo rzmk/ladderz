@@ -1,0 +1,10 @@
+[package]
+name = "lz"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ladderz = { git = "https://github.com/rzmk/ladderz", branch = "main" }
+# For local development, use:
+# ladderz = { path = "../ladderz" }
+clap = { version = "4.4.12", features = ["derive"] }

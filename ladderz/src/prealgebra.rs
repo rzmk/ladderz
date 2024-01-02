@@ -12,7 +12,7 @@ use std::collections::{HashMap, HashSet};
 ///
 /// ```rust
 /// use std::collections::HashSet;
-/// use ladderz::pre_algebra::get_factor_pairs;
+/// use ladderz::prealgebra::get_factor_pairs;
 ///
 /// let result_pairs = get_factor_pairs(12);
 /// let expected_pairs: HashSet<(u32, u32)> = [(1, 12), (2, 6), (3, 4)].into();
@@ -53,7 +53,7 @@ pub fn get_factor_pairs(n: u32) -> HashSet<(u32, u32)> {
 ///
 /// ```rust
 /// use std::collections::HashSet;
-/// use ladderz::pre_algebra::get_factors;
+/// use ladderz::prealgebra::get_factors;
 ///
 /// let result_factors = get_factors(16);
 /// let expected_factors: HashSet<u32> = [1, 2, 4, 8, 16].into();
@@ -83,7 +83,7 @@ pub fn get_factors(n: u32) -> HashSet<u32> {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::is_factor;
+/// use ladderz::prealgebra::is_factor;
 ///
 /// assert!(is_factor(2, 16)); // 2 is a factor of 16
 /// assert!(!is_factor(3, 16)); // 3 is not a factor of 16
@@ -104,7 +104,7 @@ pub fn is_factor(x: u32, y: u32) -> bool {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::is_multiple;
+/// use ladderz::prealgebra::is_multiple;
 ///
 /// assert!(is_multiple(16, 2)); // 16 is a multiple of 2
 /// assert!(!is_multiple(16, 3)); // 16 is not a multiple of 3
@@ -120,7 +120,7 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::get_multiples_in_range;
+/// use ladderz::prealgebra::get_multiples_in_range;
 /// use std::collections::HashSet;
 ///
 /// let result: HashSet<u32> = get_multiples_in_range(2, 10);
@@ -144,7 +144,7 @@ pub fn get_multiples_in_range(n: u32, end: u32) -> HashSet<u32> {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::is_prime;
+/// use ladderz::prealgebra::is_prime;
 ///
 /// assert!(!is_prime(1)); // 1 is not a prime number
 /// assert!(is_prime(2)); // 2 is a prime number
@@ -176,7 +176,7 @@ pub fn is_prime(n: u32) -> bool {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::is_composite;
+/// use ladderz::prealgebra::is_composite;
 ///
 /// assert!(!is_composite(1)); // 1 is not a composite number
 /// assert!(!is_composite(2)); // 2 is not a composite number
@@ -200,7 +200,7 @@ pub fn is_composite(n: u32) -> bool {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::get_primes_in_range;
+/// use ladderz::prealgebra::get_primes_in_range;
 /// use std::collections::HashSet;
 ///
 /// let result: HashSet<u32> = get_primes_in_range(2, 10);
@@ -226,7 +226,7 @@ pub fn get_primes_in_range(start: u32, end: u32) -> HashSet<u32> {
 /// # Examples
 ///
 /// ```rust
-/// use ladderz::pre_algebra::get_prime_factorization;
+/// use ladderz::prealgebra::get_prime_factorization;
 /// use std::collections::HashMap;
 ///
 /// let result: HashMap<u32, u32> = get_prime_factorization(12);
