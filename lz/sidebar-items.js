@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Subjects"],"fn":["main"],"mod":["prealgebra"],"struct":["Cli"]};

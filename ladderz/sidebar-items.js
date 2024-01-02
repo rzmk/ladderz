@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["pre_algebra"]};
+window.SIDEBAR_ITEMS = {"mod":["prealgebra"]};
