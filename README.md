@@ -10,9 +10,14 @@ The `ladderz` project is a collection of math and tech concepts implemented in c
 
 ## Demos
 
+### ladderz Library Demo
+
+![ladderz-crate-demo](https://github.com/rzmk/ladderz/assets/30333942/ebebe82d-f2f7-4604-9ea8-641325c90997)
+![ladderz-crate-demo-output](https://github.com/rzmk/ladderz/assets/30333942/e84b981a-91ca-40ed-af1b-d3115be848fd)
+
 ### `lz` CLI Demo
 
-### ladderz Library Demo
+![lz-demo](https://github.com/rzmk/ladderz/assets/30333942/e4f18934-b2bd-45cc-a948-ee28422f19e2)
 
 ## CLI Example
 
@@ -48,13 +53,13 @@ We can use the `--raw` flag to get the raw output of the function:
 lz prealgebra get-factors 12 --raw
 ```
 
-The printed output should be:
+The printed output may be:
 
 ```console
 {1, 2, 3, 4, 6, 12}
 ```
 
-Note that the numbers may not be sorted.
+Note that the numbers may not be sorted since the `get_factors` function implemented in the ladderz library returns a `HashSet<u32>`.
 
 ## Library Example
 
