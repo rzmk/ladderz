@@ -16,13 +16,13 @@ pub enum Prealgebra {
     /// ### Output
     /// 
     /// ```bash
-    /// The factor pairs of 12 are [(1, 12), (2, 6), (3, 4)].
+    /// The factor pairs of 12 are {(1, 12), (2, 6), (3, 4)}.
     /// ```
     /// 
     /// ## Raw Output (use `-r` or `--raw`)
     /// 
     /// ```bash
-    /// [(1, 12), (2, 6), (3, 4)]
+    /// {(1, 12), (2, 6), (3, 4)}
     /// ```
     FactorPairs {
         /// The positive integer to find factor pairs for.
@@ -44,13 +44,13 @@ pub enum Prealgebra {
     /// ### Output
     /// 
     /// ```bash
-    /// The factors of 12 are [1, 2, 3, 4, 6, 12].
+    /// The factors of 12 are {1, 2, 3, 4, 6, 12}.
     /// ```
     /// 
     /// ## Raw Output (use `-r` or `--raw`)
     /// 
     /// ```bash
-    /// [1, 2, 3, 4, 6, 12]
+    /// {1, 2, 3, 4, 6, 12}
     /// ```
     Factors {
         /// The positive integer to find factors for.
@@ -72,13 +72,13 @@ pub enum Prealgebra {
     /// ### Output
     /// 
     /// ```bash
-    /// The multiples of 3 in the range [1, 10] are [3, 6, 9].
+    /// The multiples of 3 in the range [1, 10] are {3, 6, 9}.
     /// ```
     /// 
     /// ## Raw Output (use `-r` or `--raw`)
     /// 
     /// ```bash
-    /// [3, 6, 9]
+    /// {3, 6, 9}
     /// ```
     MultiplesInRange {
         /// The positive integer to find multiples for.
@@ -102,13 +102,13 @@ pub enum Prealgebra {
     /// ### Output
     /// 
     /// ```bash
-    /// The primes in the range [1, 10] are [2, 3, 5, 7].
+    /// The primes in the range [1, 10] are {2, 3, 7, 5}.
     /// ```
     /// 
     /// ## Raw Output (use `-r` or `--raw`)
     /// 
     /// ```bash
-    /// [2, 3, 5, 7]
+    /// {2, 3, 7, 5}
     /// ```
     PrimesInRange {
         /// The lower bound of the range to find primes in.
@@ -132,13 +132,13 @@ pub enum Prealgebra {
     /// ### Output
     /// 
     /// ```bash
-    /// The prime factorization of 12 is {2: 2, 3: 1}.
+    /// The prime factorization of 12 is {3: 1, 2: 2}.
     /// ```
     /// 
     /// ## Raw Output (use `-r` or `--raw`)
     /// 
     /// ```bash
-    /// {2: 2, 3: 1}
+    /// {3: 1, 2: 2}
     /// ```
     PrimeFactorization {
         /// The positive integer to find the prime factorization of.
