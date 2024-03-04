@@ -3,7 +3,7 @@
 The `ladderz` project is a collection of math and tech concepts implemented in code.
 
 -   **[`ladderz` library](https://rzmk.github.io/ladderz/)** - A Rust library for running concept implementations
--   **[`lz` CLI](lz)** - A command line tool for running ladderz functions
+-   **[`lz` CLI](https://rzmk.github.io/ladderz/lz/index.html)** - A command line tool for running ladderz functions
 -   **[notebooks](notebooks)** - Rust & Python Jupyter notebooks with concept exercises and solutions
 
 > If you're looking for a more efficient implementation of a concept (e.g., for use in your programs), other resources may be more useful.
