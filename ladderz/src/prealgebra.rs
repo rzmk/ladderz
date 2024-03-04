@@ -113,7 +113,7 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
     x % y == 0
 }
 
-/// Finds all the multiples of a positive integer `n` up to and including `end` (in the range [n, end]).
+/// Finds all the multiples of a positive integer `n` starting from `start` and ending at `end` (inclusive).
 ///
 /// A multiple of `n` is a positive integer `num` where `num` is evenly divisible by `n` (i.e., `num % n == 0`).
 ///
@@ -123,14 +123,18 @@ pub fn is_multiple(x: u32, y: u32) -> bool {
 /// use ladderz::prealgebra::get_multiples_in_range;
 /// use std::collections::HashSet;
 ///
-/// let result: HashSet<u32> = get_multiples_in_range(2, 10);
-/// let expected: HashSet<u32> = [2, 4, 6, 8, 10].into();
+/// let result: HashSet<u32> = get_multiples_in_range(2, 5, 10);
+/// let expected: HashSet<u32> = [6, 8, 10].into();
 /// assert_eq!(result, expected);
 /// ```
-pub fn get_multiples_in_range(n: u32, end: u32) -> HashSet<u32> {
+pub fn get_multiples_in_range(n: u32, start: u32, end: u32) -> HashSet<u32> {
     let mut multiples: HashSet<u32> = HashSet::new();
-
-    for num in (n..end + 1).step_by(n as usize) {
+    let initial = if start % n == 0 {
+        start
+    } else {
+        start + n - (start % n)
+    };
+    for num in (initial..end + 1).step_by(n as usize) {
         multiples.insert(num);
     }
     multiples
@@ -304,16 +308,16 @@ mod tests {
 
     #[test]
     fn test_get_multiples_in_range() {
-        let result: HashSet<u32> = get_multiples_in_range(2, 20);
-        let expected: HashSet<u32> = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20].into();
+        let result: HashSet<u32> = get_multiples_in_range(2, 10, 20);
+        let expected: HashSet<u32> = [10, 12, 14, 16, 18, 20].into();
         assert_eq!(result, expected);
 
-        let result_2: HashSet<u32> = get_multiples_in_range(5, 34);
-        let expected_2: HashSet<u32> = [5, 10, 15, 20, 25, 30].into();
+        let result_2: HashSet<u32> = get_multiples_in_range(5, 23, 34);
+        let expected_2: HashSet<u32> = [25, 30].into();
         assert_eq!(result_2, expected_2);
 
-        let result_3: HashSet<u32> = get_multiples_in_range(7, 11);
-        let expected_3: HashSet<u32> = [7].into();
+        let result_3: HashSet<u32> = get_multiples_in_range(7, 10, 11);
+        let expected_3: HashSet<u32> = [].into();
         assert_eq!(expected_3, result_3);
     }
 

@@ -4,7 +4,7 @@ The `ladderz` project is a collection of math and tech concepts implemented in c
 
 -   **[`ladderz` library](https://rzmk.github.io/ladderz/)** - A Rust library for running concept implementations
 -   **[`lz` CLI](lz)** - A command line tool for running ladderz functions
--   **[notebooks](notebooks)** - Jupyter notebooks with concept exercises and solutions in Python
+-   **[notebooks](notebooks)** - Rust & Python Jupyter notebooks with concept exercises and solutions
 
 > If you're looking for a more efficient implementation of a concept (e.g., for use in your programs), other resources may be more useful.
 
@@ -41,7 +41,7 @@ Now let's run the `lz` CLI tool with the `prealgebra` subject and `get-factors` 
 lz prealgebra get-factors 12
 ```
 
-The printed output should be:
+The printed output may be:
 
 ```console
 The factors of 12 are {2, 3, 6, 1, 4, 12}.
@@ -53,7 +53,7 @@ We can use the `--raw` flag to get the raw output of the function:
 lz prealgebra get-factors 12 --raw
 ```
 
-The printed output may be:
+The printed raw output may be:
 
 ```console
 {1, 2, 3, 4, 6, 12}
@@ -154,7 +154,6 @@ Not currently implemented, but ideas that may be useful:
     -   Linear Algebra
     -   Statistics
     -   Discrete Math
-    -   Algorithms
     -   Bioinformatics
 -   **ladderz-py** - A package for running implementations of mathematical concepts in Python
 -   **ladderz-app** - An interactive cross-platform (web, desktop, mobile) app potentially including visualizations, practice problems, & a course-like structure (potentially in Flutter or Tauri with Next.js & Rust)

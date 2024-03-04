@@ -9,7 +9,7 @@
 //! ```toml
 //! ladderz = { git = "https://github.com/rzmk/ladderz", branch = "main" }
 //! ```
-//! 
+//!
 //! # Example
 //!
 //! ```rust
@@ -43,3 +43,21 @@
 /// ```
 ///
 pub mod prealgebra;
+
+/// Various data structures and algorithms implementations.
+///
+/// # Example
+///
+/// ```rust
+/// use ladderz::dsa::contains_duplicate;
+///
+/// let nums: Vec<i32> = vec![2, 3, 4, 2];
+/// let result = contains_duplicate(nums.clone());
+/// println!("The vector {:?} {} contain a duplicate.", &nums, if result { "does" } else { "does not" });
+/// ```
+///
+/// ```console
+/// The vector [2, 3, 4, 2] does contain a duplicate.
+/// ```
+///
+pub mod dsa;

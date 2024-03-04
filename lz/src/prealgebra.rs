@@ -4,23 +4,23 @@ use clap::Subcommand;
 #[command(arg_required_else_help(true))]
 pub enum Prealgebra {
     /// Finds all factor pairs for a positive integer.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra factor-pairs 12
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// The factor pairs of 12 are {(1, 12), (2, 6), (3, 4)}.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// {(1, 12), (2, 6), (3, 4)}
     /// ```
@@ -34,21 +34,21 @@ pub enum Prealgebra {
     /// Finds all factors for a positive integer.
     ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra factors 12
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// The factors of 12 are {1, 2, 3, 4, 6, 12}.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// {1, 2, 3, 4, 6, 12}
     /// ```
@@ -60,29 +60,31 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Finds all multiples of a positive integer in a given range.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra multiples-in-range 3 10
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// The multiples of 3 in the range [1, 10] are {3, 6, 9}.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// {3, 6, 9}
     /// ```
     MultiplesInRange {
         /// The positive integer to find multiples for.
         n: u32,
+        /// The lower bound of the range to find multiples in.
+        lower_bound: u32,
         /// The upper bound of the range to find multiples in.
         upper_bound: u32,
         /// Whether or not to return the raw output.
@@ -90,23 +92,23 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Finds all primes in a given range.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra primes-in-range 1 10
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// The primes in the range [1, 10] are {2, 3, 7, 5}.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// {2, 3, 7, 5}
     /// ```
@@ -120,23 +122,23 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Finds the prime factorization of a positive integer.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra prime-factorization 12
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// The prime factorization of 12 is {3: 1, 2: 2}.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// {3: 1, 2: 2}
     /// ```
@@ -148,23 +150,23 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Determines if a positive integer is composite.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra is-composite 12
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// 12 is composite.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// true
     /// ```
@@ -176,23 +178,23 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Determines if a positive integer is prime.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra is-prime 12
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// 12 is not prime.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// false
     /// ```
@@ -204,23 +206,23 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Determines if a positive integer is a factor of another positive integer.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra is-factor 3 12
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// 3 is a factor of 12.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// true
     /// ```
@@ -234,23 +236,23 @@ pub enum Prealgebra {
         raw: bool,
     },
     /// Determines if a positive integer is a multiple of another positive integer.
-    /// 
+    ///
     /// ## Example
-    /// 
+    ///
     /// ### Input
-    /// 
+    ///
     /// ```bash
     /// lz prealgebra is-multiple 12 3
     /// ```
-    /// 
+    ///
     /// ### Output
-    /// 
+    ///
     /// ```bash
     /// 12 is a multiple of 3.
     /// ```
-    /// 
+    ///
     /// ## Raw Output (use `-r` or `--raw`)
-    /// 
+    ///
     /// ```bash
     /// true
     /// ```
@@ -278,15 +280,17 @@ pub fn match_prealgebra(function: Option<Prealgebra>) {
         },
         Some(Prealgebra::MultiplesInRange {
             n,
+            lower_bound,
             upper_bound,
             raw,
         }) => match raw {
-            true => println!("{:?}", get_multiples_in_range(n, upper_bound)),
+            true => println!("{:?}", get_multiples_in_range(n, lower_bound, upper_bound)),
             false => println!(
-                "The multiples of {} in the range [1, {}] are {:?}.",
+                "The multiples of {} in the range [{}, {}] are {:?}.",
                 n,
+                lower_bound,
                 upper_bound,
-                get_multiples_in_range(n, upper_bound)
+                get_multiples_in_range(n, lower_bound, upper_bound)
             ),
         },
         Some(Prealgebra::PrimesInRange {
@@ -340,8 +344,6 @@ pub fn match_prealgebra(function: Option<Prealgebra>) {
                 m
             ),
         },
-        None => {
-            println!("Please provide a function to use.");
-        }
+        None => println!("Please provide a function to use."),
     }
 }
