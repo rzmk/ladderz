@@ -34,6 +34,36 @@ pub enum Dsa {
         #[arg(short = 'r', long)]
         raw: bool,
     },
+    /// Returns true or false based on whether string a is an anagram of string b.
+    ///
+    /// ## Example
+    ///
+    /// ### Input
+    ///
+    /// ```bash
+    /// lz dsa is-anagram marc cram
+    /// ```
+    ///
+    /// ### Output
+    ///
+    /// ```bash
+    /// "marc" is an anagram of "cram".
+    /// ```
+    ///
+    /// ## Raw Output (use `-r` or `--raw`)
+    ///
+    /// ```bash
+    /// true
+    /// ```
+    IsAnagram {
+        /// The first string to compare against.
+        a: String,
+        /// The second string to compare against.
+        b: String,
+        /// Whether or not to return the raw output.
+        #[arg(short = 'r', long)]
+        raw: bool,
+    },
 }
 
 pub fn match_dsa(function: Option<Dsa>) {
@@ -47,6 +77,18 @@ pub fn match_dsa(function: Option<Dsa>) {
                     "The vector {:?} {} contain a duplicate.",
                     &n,
                     if result { "does" } else { "does not" }
+                )
+            }
+        },
+        Some(Dsa::IsAnagram { a, b, raw }) => match raw {
+            true => println!("{:?}", is_anagram(a, b)),
+            false => {
+                let result = is_anagram(a.clone(), b.clone());
+                println!(
+                    "{:?} {} an anagram of {:?}.",
+                    a,
+                    if result { "is" } else { "is not" },
+                    b,
                 )
             }
         },
