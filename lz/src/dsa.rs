@@ -64,6 +64,39 @@ pub enum Dsa {
         #[arg(short = 'r', long)]
         raw: bool,
     },
+    /// Returns the indices of two numbers in a vector that sum to a target number.
+    ///
+    /// There is an assumption that there must always exist at least two numbers that
+    /// sum to the target number in the given vector of numbers.
+    ///
+    /// ## Example
+    ///
+    /// ### Input
+    ///
+    /// ```bash
+    /// lz dsa two-sum 1,2,3 5
+    /// ```
+    ///
+    /// ### Output
+    ///
+    /// ```bash
+    /// [1, 2]
+    /// ```
+    ///
+    /// ## Raw Output (use `-r` or `--raw`)
+    ///
+    /// ```bash
+    /// [1, 2]
+    /// ```
+    TwoSum {
+        /// The vector of numbers as a comma-delimited string.
+        nums: String,
+        /// The number that two numbers from nums must sum to.
+        target: i32,
+        /// Whether or not to return the raw output.
+        #[arg(short = 'r', long)]
+        raw: bool,
+    },
 }
 
 pub fn match_dsa(function: Option<Dsa>) {
@@ -92,6 +125,21 @@ pub fn match_dsa(function: Option<Dsa>) {
                 )
             }
         },
+        Some(Dsa::TwoSum { target, nums, raw }) => {
+            let nums_vec: Vec<i32> = nums
+                .split(',')
+                .map(|num| num.trim())
+                .map(|num| num.parse::<i32>().unwrap())
+                .collect();
+
+            match raw {
+                true => println!("{:?}", two_sum(nums_vec, target)),
+                false => println!(
+                    "The pair of indices of the two numbers that sum to {target} is: {:?}.",
+                    two_sum(nums_vec, target)
+                ),
+            }
+        }
         None => {
             println!("Please provide a function to use.");
         }

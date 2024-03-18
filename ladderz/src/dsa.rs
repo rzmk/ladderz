@@ -54,6 +54,18 @@ pub fn is_anagram2(a: String, b: String) -> bool {
     letters.into_values().all(|c: i32| c == 0)
 }
 
+pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    let mut seen = HashMap::new();
+    for (i, num) in nums.iter().enumerate() {
+        if seen.contains_key(num) {
+            return vec![i as i32, seen[num]];
+        }
+        let diff = target - num;
+        seen.insert(diff, i as i32);
+    }
+    vec![0, 1]
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -69,6 +81,13 @@ mod tests {
     fn test_is_anagram() {
         let result = is_anagram("marc".to_owned(), "cram".to_owned());
         let expected = true;
+        assert_eq!(result, expected);
+    }
+
+    #[test]
+    fn test_two_sum() {
+        let result: HashSet<i32> = HashSet::from_iter(two_sum(vec![2, 3, 8, 5], 8));
+        let expected: HashSet<i32> = HashSet::from_iter(vec![1, 3]);
         assert_eq!(result, expected);
     }
 }
