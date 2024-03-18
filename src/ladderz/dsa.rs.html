@@ -73,6 +73,25 @@
 <a href="#72" id="72">72</a>
 <a href="#73" id="73">73</a>
 <a href="#74" id="74">74</a>
+<a href="#75" id="75">75</a>
+<a href="#76" id="76">76</a>
+<a href="#77" id="77">77</a>
+<a href="#78" id="78">78</a>
+<a href="#79" id="79">79</a>
+<a href="#80" id="80">80</a>
+<a href="#81" id="81">81</a>
+<a href="#82" id="82">82</a>
+<a href="#83" id="83">83</a>
+<a href="#84" id="84">84</a>
+<a href="#85" id="85">85</a>
+<a href="#86" id="86">86</a>
+<a href="#87" id="87">87</a>
+<a href="#88" id="88">88</a>
+<a href="#89" id="89">89</a>
+<a href="#90" id="90">90</a>
+<a href="#91" id="91">91</a>
+<a href="#92" id="92">92</a>
+<a href="#93" id="93">93</a>
 </pre></div><pre class="rust"><code><span class="kw">use </span>std::collections::{HashMap, HashSet};
 
 <span class="kw">pub fn </span>contains_duplicate(nums: Vec&lt;i32&gt;) -&gt; bool {
@@ -129,6 +148,18 @@
     letters.into_values().all(|c: i32| c == <span class="number">0</span>)
 }
 
+<span class="kw">pub fn </span>two_sum(nums: Vec&lt;i32&gt;, target: i32) -&gt; Vec&lt;i32&gt; {
+    <span class="kw">let </span><span class="kw-2">mut </span>seen = HashMap::new();
+    <span class="kw">for </span>(i, num) <span class="kw">in </span>nums.iter().enumerate() {
+        <span class="kw">if </span>seen.contains_key(num) {
+            <span class="kw">return </span><span class="macro">vec!</span>[i <span class="kw">as </span>i32, seen[num]];
+        }
+        <span class="kw">let </span>diff = target - num;
+        seen.insert(diff, i <span class="kw">as </span>i32);
+    }
+    <span class="macro">vec!</span>[<span class="number">0</span>, <span class="number">1</span>]
+}
+
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
@@ -144,6 +175,13 @@
     </span><span class="kw">fn </span>test_is_anagram() {
         <span class="kw">let </span>result = is_anagram(<span class="string">"marc"</span>.to_owned(), <span class="string">"cram"</span>.to_owned());
         <span class="kw">let </span>expected = <span class="bool-val">true</span>;
+        <span class="macro">assert_eq!</span>(result, expected);
+    }
+
+    <span class="attr">#[test]
+    </span><span class="kw">fn </span>test_two_sum() {
+        <span class="kw">let </span>result: HashSet&lt;i32&gt; = HashSet::from_iter(two_sum(<span class="macro">vec!</span>[<span class="number">2</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">5</span>], <span class="number">8</span>));
+        <span class="kw">let </span>expected: HashSet&lt;i32&gt; = HashSet::from_iter(<span class="macro">vec!</span>[<span class="number">1</span>, <span class="number">3</span>]);
         <span class="macro">assert_eq!</span>(result, expected);
     }
 }
